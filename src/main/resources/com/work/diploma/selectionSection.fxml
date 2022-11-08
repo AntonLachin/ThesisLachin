@@ -1,0 +1,559 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.chart.AreaChart?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.RadioMenuItem?>
+<?import javafx.scene.control.SplitMenuButton?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<TabPane fx:id="tabPane" maxHeight="-Infinity" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="750.0" prefWidth="1280.0" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.work.diploma.ControllerForSelector">
+    <tabs>
+        <Tab fx:id="conditionTab" text="Исходные данные для расчёта">
+            <content>
+                <AnchorPane prefHeight="180.0" prefWidth="200.0">
+                    <children>
+                        <VBox maxWidth="-Infinity" minWidth="-Infinity" prefWidth="1280.0">
+                            <children>
+                                <HBox minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="1280.0">
+                                    <children>
+                                        <VBox minHeight="-Infinity" minWidth="-Infinity" prefHeight="300.0" prefWidth="250.0">
+                                            <children>
+                                                <RadioButton fx:id="fixedSupportOne" minWidth="-Infinity" mnemonicParsing="false" onMouseClicked="#onSchemaChosenSwitcher" prefHeight="34.0" prefWidth="180.0" text="Один пролёт">
+                                                    <toggleGroup>
+                                                        <ToggleGroup fx:id="loadingScheme" />
+                                                    </toggleGroup>
+                                                </RadioButton>
+                                                <ImageView fx:id="supOne" fitHeight="150.0" fitWidth="250.0" pickOnBounds="true" preserveRatio="true">
+                                                    <image>
+                                                        <Image backgroundLoading="true" url="@images/первый_пролёт_шарнирно-неподвижная_заделка.JPG" />
+                                                    </image>
+                                                </ImageView>
+                                                <RadioButton fx:id="hardTerminationOne" minWidth="-Infinity" mnemonicParsing="false" onMouseClicked="#onSchemaChosenSwitcher" prefHeight="34.0" prefWidth="180.0" text="Один пролёт" toggleGroup="$loadingScheme" />
+                                                <ImageView fx:id="hardOne" fitHeight="150.0" fitWidth="250.0" pickOnBounds="true" preserveRatio="true">
+                                                    <image>
+                                                        <Image url="@images/первый_пролёт_жёсткая_заделка.JPG" />
+                                                    </image>
+                                                </ImageView>
+                                            </children>
+                                            <padding>
+                                                <Insets left="10.0" />
+                                            </padding>
+                                        </VBox>
+                                        <VBox minHeight="-Infinity" minWidth="-Infinity" prefHeight="300.0" prefWidth="250.0">
+                                            <children>
+                                                <RadioButton fx:id="fixedSupportTwo" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onMouseClicked="#onSchemaChosenSwitcher" prefHeight="34.0" prefWidth="180.0" text="Два пролёта" toggleGroup="$loadingScheme" />
+                                                <ImageView fx:id="supTwo" fitHeight="150.0" fitWidth="250.0" pickOnBounds="true" preserveRatio="true">
+                                                    <image>
+                                                        <Image url="@images/второй_пролёт.JPG" />
+                                                    </image>
+                                                </ImageView>
+                                                <RadioButton fx:id="hardTerminationTwo" minWidth="-Infinity" mnemonicParsing="false" onMouseClicked="#onSchemaChosenSwitcher" prefHeight="34.0" prefWidth="180.0" text="Два пролёта" toggleGroup="$loadingScheme" />
+                                                <ImageView fx:id="hardTwo" fitHeight="150.0" fitWidth="250.0" pickOnBounds="true" preserveRatio="true">
+                                                    <image>
+                                                        <Image url="@images/второй_пролёт.JPG" />
+                                                    </image>
+                                                </ImageView>
+                                            </children>
+                                            <padding>
+                                                <Insets left="10.0" />
+                                            </padding>
+                                        </VBox>
+                                        <VBox minHeight="-Infinity" minWidth="-Infinity" prefHeight="300.0" prefWidth="250.0">
+                                            <children>
+                                                <RadioButton fx:id="fixedSupportThree" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onMouseClicked="#onSchemaChosenSwitcher" prefHeight="34.0" prefWidth="180.0" text="Три пролёта" toggleGroup="$loadingScheme" />
+                                                <ImageView fx:id="supThree" fitHeight="150.0" fitWidth="250.0" pickOnBounds="true" preserveRatio="true">
+                                                    <image>
+                                                        <Image url="@images/третий_пролёт.JPG" />
+                                                    </image>
+                                                </ImageView>
+                                                <RadioButton fx:id="hardTerminationThree" minWidth="-Infinity" mnemonicParsing="false" onMouseClicked="#onSchemaChosenSwitcher" prefHeight="34.0" prefWidth="180.0" text="Три пролёта" toggleGroup="$loadingScheme" />
+                                                <ImageView fx:id="hardThree" fitHeight="150.0" fitWidth="250.0" pickOnBounds="true" preserveRatio="true">
+                                                    <image>
+                                                        <Image url="@images/третий_пролёт.JPG" />
+                                                    </image>
+                                                </ImageView>
+                                            </children>
+                                            <padding>
+                                                <Insets left="10.0" />
+                                            </padding>
+                                        </VBox>
+                                        <VBox minHeight="-Infinity" minWidth="-Infinity" prefHeight="300.0" prefWidth="250.0">
+                                            <children>
+                                                <RadioButton fx:id="fixedSupportFour" minWidth="-Infinity" mnemonicParsing="false" onMouseClicked="#onSchemaChosenSwitcher" prefHeight="34.0" prefWidth="180.0" text="Четыре пролёта" toggleGroup="$loadingScheme" />
+                                                <ImageView fx:id="supFour" fitHeight="150.0" fitWidth="250.0" pickOnBounds="true" preserveRatio="true">
+                                                    <image>
+                                                        <Image url="@images/четвёртый_пролёт.JPG" />
+                                                    </image>
+                                                </ImageView>
+                                                <RadioButton fx:id="hardTerminationFour" minWidth="-Infinity" mnemonicParsing="false" onMouseClicked="#onSchemaChosenSwitcher" prefHeight="34.0" prefWidth="180.0" text="Четыре пролёта" toggleGroup="$loadingScheme" />
+                                                <ImageView fx:id="hardFour" fitHeight="150.0" fitWidth="250.0" pickOnBounds="true" preserveRatio="true">
+                                                    <image>
+                                                        <Image url="@images/четвёртый_пролёт.JPG" />
+                                                    </image>
+                                                </ImageView>
+                                            </children>
+                                            <padding>
+                                                <Insets left="10.0" />
+                                            </padding>
+                                        </VBox>
+                                        <VBox minHeight="-Infinity" minWidth="-Infinity" prefHeight="300.0" prefWidth="250.0">
+                                            <children>
+                                                <RadioButton fx:id="fixedSupportFive" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onMouseClicked="#onSchemaChosenSwitcher" prefHeight="34.0" prefWidth="180.0" text="Пять пролётов" toggleGroup="$loadingScheme" />
+                                                <ImageView fx:id="supFive" fitHeight="150.0" fitWidth="250.0" pickOnBounds="true" preserveRatio="true">
+                                                    <image>
+                                                        <Image url="@images/пятый_пролёт.JPG" />
+                                                    </image>
+                                                    <VBox.margin>
+                                                        <Insets />
+                                                    </VBox.margin>
+                                                </ImageView>
+                                                <RadioButton fx:id="hardTerminationFive" minWidth="-Infinity" mnemonicParsing="false" onMouseClicked="#onSchemaChosenSwitcher" prefHeight="34.0" prefWidth="180.0" text="Пять пролётов" toggleGroup="$loadingScheme" />
+                                                <ImageView fx:id="hardFive" fitHeight="150.0" fitWidth="250.0" pickOnBounds="true" preserveRatio="true">
+                                                    <image>
+                                                        <Image url="@images/пятый_пролёт.JPG" />
+                                                    </image>
+                                                    <VBox.margin>
+                                                        <Insets />
+                                                    </VBox.margin>
+                                                </ImageView>
+                                            </children>
+                                            <padding>
+                                                <Insets left="10.0" />
+                                            </padding>
+                                        </VBox>
+                                    </children>
+                                </HBox>
+                                <HBox prefHeight="30.0" prefWidth="1280.0">
+                                    <children>
+                                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="N1=">
+                                            <HBox.margin>
+                                                <Insets left="5.0" right="5.0" />
+                                            </HBox.margin>
+                                        </Text>
+                                        <TextField fx:id="n1f" prefHeight="16.0" prefWidth="70.0" promptText="кН" />
+                                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="a1=">
+                                            <HBox.margin>
+                                                <Insets left="5.0" right="5.0" />
+                                            </HBox.margin>
+                                        </Text>
+                                        <TextField fx:id="a1f" prefHeight="16.0" prefWidth="70.0" promptText="м" />
+                                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="M1=">
+                                            <HBox.margin>
+                                                <Insets left="5.0" right="5.0" />
+                                            </HBox.margin>
+                                        </Text>
+                                        <TextField fx:id="m1f" prefHeight="26.0" prefWidth="70.0" promptText="кН*м" />
+                                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="с1=">
+                                            <HBox.margin>
+                                                <Insets left="5.0" right="5.0" />
+                                            </HBox.margin>
+                                        </Text>
+                                        <TextField fx:id="c1f" prefHeight="16.0" prefWidth="70.0" promptText="м" />
+                                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="q1=" wrappingWidth="28.94415283203125">
+                                            <HBox.margin>
+                                                <Insets left="5.0" right="5.0" />
+                                            </HBox.margin>
+                                        </Text>
+                                        <TextField fx:id="q1f" prefHeight="26.0" prefWidth="70.0" promptText="кН/м" />
+                                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="N2=">
+                                            <HBox.margin>
+                                                <Insets left="5.0" right="5.0" />
+                                            </HBox.margin>
+                                        </Text>
+                                        <TextField fx:id="n2f" disable="true" prefHeight="16.0" prefWidth="70.0" promptText="кН">
+                                            <HBox.margin>
+                                                <Insets />
+                                            </HBox.margin>
+                                        </TextField>
+                                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="a2=">
+                                            <HBox.margin>
+                                                <Insets left="5.0" right="5.0" />
+                                            </HBox.margin>
+                                        </Text>
+                                        <TextField fx:id="a2f" disable="true" prefHeight="16.0" prefWidth="70.0" promptText="м" />
+                                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="M2=">
+                                            <HBox.margin>
+                                                <Insets left="5.0" right="5.0" />
+                                            </HBox.margin>
+                                        </Text>
+                                        <TextField fx:id="m2f" disable="true" prefHeight="26.0" prefWidth="70.0" promptText="кН*м" />
+                                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="с2=">
+                                            <HBox.margin>
+                                                <Insets left="5.0" right="5.0" />
+                                            </HBox.margin>
+                                        </Text>
+                                        <TextField fx:id="c2f" disable="true" prefHeight="16.0" prefWidth="70.0" promptText="м" />
+                                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="q2=" wrappingWidth="28.94415283203125">
+                                            <HBox.margin>
+                                                <Insets left="5.0" right="5.0" />
+                                            </HBox.margin>
+                                        </Text>
+                                        <TextField fx:id="q2f" disable="true" prefHeight="26.0" prefWidth="70.0" promptText="кН/м" />
+                                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="N3=">
+                                            <HBox.margin>
+                                                <Insets left="5.0" right="10.0" />
+                                            </HBox.margin>
+                                        </Text>
+                                        <TextField fx:id="n3f" disable="true" prefHeight="16.0" prefWidth="70.0" promptText="кН" />
+                                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="a3=">
+                                            <HBox.margin>
+                                                <Insets left="5.0" right="5.0" />
+                                            </HBox.margin>
+                                        </Text>
+                                        <TextField fx:id="a3f" disable="true" prefHeight="16.0" prefWidth="70.0" promptText="м" />
+                                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="M3=">
+                                            <HBox.margin>
+                                                <Insets left="5.0" right="5.0" />
+                                            </HBox.margin>
+                                        </Text>
+                                        <TextField fx:id="m3f" disable="true" prefHeight="26.0" prefWidth="70.0" promptText="кН*м" />
+                                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="с3=">
+                                            <HBox.margin>
+                                                <Insets left="5.0" right="5.0" />
+                                            </HBox.margin>
+                                        </Text>
+                                        <TextField fx:id="c3f" disable="true" prefHeight="16.0" prefWidth="70.0" promptText="м" />
+                                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="q3=" wrappingWidth="28.94415283203125">
+                                            <HBox.margin>
+                                                <Insets left="5.0" right="5.0" />
+                                            </HBox.margin>
+                                        </Text>
+                                        <TextField fx:id="q3f" disable="true" prefHeight="26.0" prefWidth="70.0" promptText="кН/м">
+                                            <HBox.margin>
+                                                <Insets right="5.0" />
+                                            </HBox.margin>
+                                        </TextField>
+                                    </children>
+                                    <VBox.margin>
+                                        <Insets bottom="10.0" />
+                                    </VBox.margin>
+                                </HBox>
+                                <HBox prefHeight="30.0" prefWidth="1280.0">
+                                    <children>
+                                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="N4=">
+                                            <HBox.margin>
+                                                <Insets left="5.0" right="5.0" />
+                                            </HBox.margin>
+                                        </Text>
+                                        <TextField fx:id="n4f" disable="true" prefHeight="16.0" prefWidth="70.0" promptText="кН" />
+                                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="a4=">
+                                            <HBox.margin>
+                                                <Insets left="5.0" right="5.0" />
+                                            </HBox.margin>
+                                        </Text>
+                                        <TextField fx:id="a4f" disable="true" prefHeight="16.0" prefWidth="70.0" promptText="м" />
+                                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="M4=">
+                                            <HBox.margin>
+                                                <Insets left="5.0" right="5.0" />
+                                            </HBox.margin>
+                                        </Text>
+                                        <TextField fx:id="m4f" disable="true" prefHeight="26.0" prefWidth="70.0" promptText="кН*м" />
+                                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="с4=">
+                                            <HBox.margin>
+                                                <Insets left="5.0" right="5.0" />
+                                            </HBox.margin>
+                                        </Text>
+                                        <TextField fx:id="c4f" disable="true" prefHeight="16.0" prefWidth="70.0" promptText="м" />
+                                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="q4=" wrappingWidth="28.94415283203125">
+                                            <HBox.margin>
+                                                <Insets left="5.0" right="5.0" />
+                                            </HBox.margin>
+                                        </Text>
+                                        <TextField fx:id="q4f" disable="true" prefHeight="26.0" prefWidth="70.0" promptText="кН/м" />
+                                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="N5=">
+                                            <HBox.margin>
+                                                <Insets left="5.0" right="5.0" />
+                                            </HBox.margin>
+                                        </Text>
+                                        <TextField fx:id="n5f" disable="true" prefHeight="16.0" prefWidth="70.0" promptText="кН">
+                                            <HBox.margin>
+                                                <Insets />
+                                            </HBox.margin>
+                                        </TextField>
+                                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="a5=">
+                                            <HBox.margin>
+                                                <Insets left="5.0" right="5.0" />
+                                            </HBox.margin>
+                                        </Text>
+                                        <TextField fx:id="a5f" disable="true" prefHeight="16.0" prefWidth="70.0" promptText="м" />
+                                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="M5=">
+                                            <HBox.margin>
+                                                <Insets left="5.0" right="5.0" />
+                                            </HBox.margin>
+                                        </Text>
+                                        <TextField fx:id="m5f" disable="true" prefHeight="26.0" prefWidth="70.0" promptText="кН*м" />
+                                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="с5=">
+                                            <HBox.margin>
+                                                <Insets left="5.0" right="5.0" />
+                                            </HBox.margin>
+                                        </Text>
+                                        <TextField fx:id="c5f" disable="true" prefHeight="16.0" prefWidth="70.0" promptText="м" />
+                                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="q5=" wrappingWidth="28.94415283203125">
+                                            <HBox.margin>
+                                                <Insets left="5.0" right="5.0" />
+                                            </HBox.margin>
+                                        </Text>
+                                        <TextField fx:id="q5f" disable="true" prefHeight="26.0" prefWidth="70.0" promptText="кН/м" />
+                                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Nk=">
+                                            <HBox.margin>
+                                                <Insets left="5.0" right="5.0" />
+                                            </HBox.margin>
+                                        </Text>
+                                        <TextField fx:id="nKf" disable="true" prefHeight="16.0" prefWidth="70.0" promptText="кН" />
+                                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="ak=">
+                                            <HBox.margin>
+                                                <Insets left="5.0" right="5.0" />
+                                            </HBox.margin>
+                                        </Text>
+                                        <TextField fx:id="aKf" disable="true" prefHeight="16.0" prefWidth="70.0" promptText="м" />
+                                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Mk=">
+                                            <HBox.margin>
+                                                <Insets left="5.0" right="5.0" />
+                                            </HBox.margin>
+                                        </Text>
+                                        <TextField fx:id="mKf" disable="true" prefHeight="26.0" prefWidth="70.0" promptText="кН*м" />
+                                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="сk=">
+                                            <HBox.margin>
+                                                <Insets left="5.0" right="5.0" />
+                                            </HBox.margin>
+                                        </Text>
+                                        <TextField fx:id="cKf" disable="true" prefHeight="16.0" prefWidth="70.0" promptText="м" />
+                                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="qk=" wrappingWidth="28.94415283203125">
+                                            <HBox.margin>
+                                                <Insets left="5.0" right="5.0" />
+                                            </HBox.margin>
+                                        </Text>
+                                        <TextField fx:id="qKf" disable="true" prefHeight="26.0" prefWidth="70.0" promptText="кН/м">
+                                            <HBox.margin>
+                                                <Insets right="5.0" />
+                                            </HBox.margin>
+                                        </TextField>
+                                    </children>
+                                    <VBox.margin>
+                                        <Insets bottom="10.0" />
+                                    </VBox.margin>
+                                </HBox>
+                                <HBox prefHeight="30.0" prefWidth="1280.0">
+                                    <children>
+                                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="L1=">
+                                            <HBox.margin>
+                                                <Insets left="5.0" right="5.0" />
+                                            </HBox.margin>
+                                        </Text>
+                                        <TextField fx:id="L1f" prefHeight="16.0" prefWidth="70.0" promptText="м" />
+                                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="L2=">
+                                            <HBox.margin>
+                                                <Insets left="5.0" right="5.0" />
+                                            </HBox.margin>
+                                        </Text>
+                                        <TextField fx:id="L2f" disable="true" prefHeight="16.0" prefWidth="70.0" promptText="м" />
+                                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="L3=">
+                                            <HBox.margin>
+                                                <Insets left="5.0" right="5.0" />
+                                            </HBox.margin>
+                                        </Text>
+                                        <TextField fx:id="L3f" disable="true" prefHeight="26.0" prefWidth="70.0" promptText="м" />
+                                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="L4=" wrappingWidth="28.94415283203125">
+                                            <HBox.margin>
+                                                <Insets left="5.0" right="5.0" />
+                                            </HBox.margin>
+                                        </Text>
+                                        <TextField fx:id="L4f" disable="true" prefHeight="26.0" prefWidth="70.0" promptText="м" />
+                                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="L5=">
+                                            <HBox.margin>
+                                                <Insets left="5.0" right="5.0" />
+                                            </HBox.margin>
+                                        </Text>
+                                        <TextField fx:id="L5f" disable="true" prefHeight="16.0" prefWidth="70.0" promptText="м">
+                                            <HBox.margin>
+                                                <Insets />
+                                            </HBox.margin>
+                                        </TextField>
+                                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Lk=">
+                                            <HBox.margin>
+                                                <Insets left="5.0" right="5.0" />
+                                            </HBox.margin>
+                                        </Text>
+                                        <TextField fx:id="Lkf" disable="true" prefHeight="16.0" prefWidth="70.0" promptText="м" />
+                                    </children>
+                                    <VBox.margin>
+                                        <Insets bottom="10.0" />
+                                    </VBox.margin>
+                                </HBox>
+                                <CheckBox fx:id="consoleOrNot" mnemonicParsing="false" onMousePressed="#onConsoleSet" text="Наличие консоли">
+                                    <padding>
+                                        <Insets left="5.0" />
+                                    </padding>
+                                    <VBox.margin>
+                                        <Insets bottom="10.0" />
+                                    </VBox.margin>
+                                </CheckBox>
+                                <SplitMenuButton mnemonicParsing="false" prefHeight="26.0" prefWidth="142.0" text="Точность расчёта">
+                                    <items>
+                                        <RadioMenuItem fx:id="low" mnemonicParsing="false" onAction="#onMaterialAndShapeChosen" text="Низкая">
+                                            <toggleGroup>
+                                                <ToggleGroup fx:id="calculationАccuracy" />
+                                            </toggleGroup>
+                                        </RadioMenuItem>
+                                        <RadioMenuItem fx:id="medium" mnemonicParsing="false" onAction="#onMaterialAndShapeChosen" text="Средняя" toggleGroup="$calculationАccuracy" />
+                                        <RadioMenuItem fx:id="high" mnemonicParsing="false" onAction="#onMaterialAndShapeChosen" text="Высокая" toggleGroup="$calculationАccuracy" />
+                                    </items>
+                                    <HBox.margin>
+                                        <Insets left="5.0" right="10.0" />
+                                    </HBox.margin>
+                                    <VBox.margin>
+                                        <Insets bottom="5.0" left="5.0" />
+                                    </VBox.margin>
+                                </SplitMenuButton>
+                                <HBox prefHeight="100.0" prefWidth="200.0">
+                                    <children>
+                                        <SplitMenuButton mnemonicParsing="false" text="Материал сечения">
+                                            <items>
+                                                <RadioMenuItem fx:id="steel" mnemonicParsing="false" onAction="#onMaterialAndShapeChosen" text="Сталь">
+                                                    <toggleGroup>
+                                                        <ToggleGroup fx:id="chosenMaterial" />
+                                                    </toggleGroup>
+                                                </RadioMenuItem>
+                                                <RadioMenuItem fx:id="wood" mnemonicParsing="false" onAction="#onMaterialAndShapeChosen" text="Дерево" toggleGroup="$chosenMaterial" />
+                                                <RadioMenuItem fx:id="concrete" mnemonicParsing="false" onAction="#onMaterialAndShapeChosen" text="Бетон" toggleGroup="$chosenMaterial" />
+                                            </items>
+                                            <HBox.margin>
+                                                <Insets left="5.0" right="10.0" />
+                                            </HBox.margin>
+                                        </SplitMenuButton>
+                                        <SplitMenuButton mnemonicParsing="false" text="Форма сечения">
+                                            <items>
+                                                <RadioMenuItem fx:id="square" mnemonicParsing="false" onAction="#onMaterialAndShapeChosen" text="Квадрат">
+                                                    <toggleGroup>
+                                                        <ToggleGroup fx:id="chosenShape" />
+                                                    </toggleGroup>
+                                                </RadioMenuItem>
+                                                <RadioMenuItem fx:id="rectangle" mnemonicParsing="false" onAction="#onMaterialAndShapeChosen" text="Прямоугольник" toggleGroup="$chosenShape" />
+                                                <RadioMenuItem fx:id="circle" mnemonicParsing="false" onAction="#onMaterialAndShapeChosen" text="Круг" toggleGroup="$chosenShape" />
+                                            </items>
+                                            <HBox.margin>
+                                                <Insets right="10.0" />
+                                            </HBox.margin>
+                                        </SplitMenuButton>
+                                        <ImageView fx:id="shapeView" fitHeight="135.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                                            <image>
+                                                <Image url="@images/сечение_круг.JPG" />
+                                            </image>
+                                        </ImageView>
+                                        <VBox prefWidth="500.0">
+                                            <children>
+                                                <HBox minWidth="-Infinity" prefHeight="71.0" prefWidth="700.0">
+                                                    <children>
+                                                        <Button fx:id="launchCalc" alignment="CENTER" contentDisplay="CENTER" minWidth="-Infinity" mnemonicParsing="false" onMouseClicked="#launchSectionSelector" prefHeight="40.0" prefWidth="150.0" text="Запуск расчёта" textAlignment="CENTER" textFill="RED">
+                                                            <cursor>
+                                                                <Cursor fx:constant="DEFAULT" />
+                                                            </cursor>
+                                                            <font>
+                                                                <Font size="18.0" />
+                                                            </font>
+                                                        </Button>
+                                                        <Text fx:id="informationText" lineSpacing="1.0" strokeType="OUTSIDE" strokeWidth="0.0" text="SomeErrorText" underline="true" visible="false" wrappingWidth="500.0">
+                                                            <HBox.margin>
+                                                                <Insets left="10.0" right="10.0" />
+                                                            </HBox.margin>
+                                                            <font>
+                                                                <Font size="14.0" />
+                                                            </font>
+                                                        </Text>
+                                                    </children>
+                                       <VBox.margin>
+                                          <Insets left="50.0" />
+                                       </VBox.margin>
+                                                </HBox>
+                                                <ProgressBar fx:id="progress" prefHeight="50.0" prefWidth="500.0" progress="0.0">
+                                                    <VBox.margin>
+                                                        <Insets left="50.0" />
+                                                    </VBox.margin>
+                                                    <padding>
+                                                        <Insets top="20.0" />
+                                                    </padding>
+                                                </ProgressBar>
+                                            </children>
+                                        </VBox>
+                                    </children>
+                                </HBox>
+                            </children>
+                        </VBox>
+                    </children>
+                </AnchorPane>
+            </content>
+        </Tab>
+        <Tab fx:id="resultTab" text="Результаты расчёта">
+            <content>
+                <Pane prefHeight="200.0" prefWidth="200.0">
+                    <children>
+                        <VBox alignment="TOP_CENTER" prefHeight="750.0" prefWidth="1280.0">
+                            <children>
+                                <AreaChart fx:id="momentDiagram" animated="false" prefHeight="200.0" title="Эпюра изгибающих моментов">
+                                    <xAxis>
+                                        <NumberAxis fx:id="momentDiagramLength" animated="false" label="L, м" side="BOTTOM" />
+                                    </xAxis>
+                                    <yAxis>
+                                        <NumberAxis fx:id="momentDiagramView" label="M, кН*м" side="LEFT" />
+                                    </yAxis>
+                                </AreaChart>
+                                <AreaChart fx:id="forceDiagram" animated="false" prefHeight="200.0" title="Эпюра поперечных сил">
+                                    <xAxis>
+                                        <NumberAxis fx:id="forceDiagramLength" label="L, м" side="BOTTOM" />
+                                    </xAxis>
+                                    <yAxis>
+                                        <NumberAxis fx:id="forceDiagramView" label="N, кН" lowerBound="-1000.0" side="LEFT" upperBound="1000.0" />
+                                    </yAxis>
+                                </AreaChart>
+                                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Результаты расчёта:">
+                                    <font>
+                                        <Font size="18.0" />
+                                    </font>
+                                </Text>
+                                <TextArea fx:id="results" editable="false" prefHeight="200.0" prefWidth="200.0" promptText="Здесь будут результаты расчёта сечения" />
+                                <HBox alignment="TOP_CENTER" prefHeight="100.0" prefWidth="200.0">
+                                    <children>
+                                        <Button mnemonicParsing="false" onMouseClicked="#reportSaver" prefHeight="30.0" text="Экспорт результатов расчёта">
+                                            <HBox.margin>
+                                                <Insets right="10.0" />
+                                            </HBox.margin>
+                                        </Button>
+                                        <Button mnemonicParsing="false" onMouseClicked="#tabSwitcher" prefHeight="30.0" text="Изменить исходные данные">
+                                            <HBox.margin>
+                                                <Insets right="10.0" />
+                                            </HBox.margin>
+                                        </Button>
+                                    </children>
+                                    <VBox.margin>
+                                        <Insets />
+                                    </VBox.margin>
+                                    <padding>
+                                        <Insets top="30.0" />
+                                    </padding>
+                                </HBox>
+                            </children>
+                        </VBox>
+                    </children>
+                </Pane>
+            </content>
+        </Tab>
+    </tabs>
+</TabPane>
